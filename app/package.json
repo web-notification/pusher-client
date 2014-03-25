@@ -5,10 +5,13 @@
   "single-instance": true,
   "window": {
     "title": "pusher-client",
-    "width": 650,
-    "height": 650,
-    "min_width": 650,
-    "min_height": 650
+    "toolbar": true,
+    "width": 300,
+    "height": 300,
+    "min_width": 300,
+    "min_height": 300,
+    "position": "center",
+    "resizable": false
   },
   "chromium-args": "--child-clean-exit"
 }
