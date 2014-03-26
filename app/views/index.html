@@ -6,6 +6,7 @@
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/socket.io.min.js"></script>
     <script type="text/javascript" src="../js/underscore.js"></script>
+    <script type="text/javascript" src="../js/AlarmManager.js"></script>
     <!--<script type="text/javascript" src="../js/nw-desktop-notifications.js"></script>-->
 
     <script type="text/javascript" src="../js/LoginViewController.js"></script>
@@ -48,6 +49,7 @@
 </div> <!-- end login-form -->
 <script>
     new LoginView();
+    var oAlarmManager = new AlarmManager("../sound/smallbox.ogg");
 </script>
 </body>
 </html>

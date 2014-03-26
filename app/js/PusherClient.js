@@ -74,23 +74,6 @@ PusherClient.prototype = {
             gui.Shell.openExternal(data.url);
         });
         this._notificationManager.notify(NotificationModel);
-/*
-
-        var win = gui.Window.open(
-            '../views/notification.html', {
-                frame: false,
-                toolbar: false,
-                width: WINDOW_WIDTH,
-                height: 0,
-                'always-on-top': true,
-                show: false,
-                resizable: false
-            });
-
-*/
-
-        /*window.LOCAL_NW.desktopNotifications.notify(data.icon, data.subject, data.description, function(){
-            gui.Shell.openExternal(data.url)
-        });*/
+        oAlarmManager.play();
     }
 };
