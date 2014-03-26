@@ -124,6 +124,21 @@ input[type="submit"] { cursor: pointer; }
     -webkit-app-region: no-drag;
 }
 
+#login-form .wrap_close {
+    position:absolute;
+    right:7px;
+    top:0px;
+    -webkit-app-region: no-drag;
+}
+
+#login-form .wrap_close a.close {
+    font-size:11px;
+    cursor: hand;
+}
+
+#login-form .wrap_close a:hover.close {
+    color:#fff
+}
 .info {
     background: #e5e5e5;
     border-radius: 50%;

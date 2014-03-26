@@ -10,12 +10,14 @@ LoginView.prototype = {
         this.welUserId = $("#user_id");
         this.welUserPasswd = $("#user_password");
         this.welBtnLogin = $("#_btn_sign_in");
+        this.welBtnClose = $("#_btn_close");
         this.oWindow = gui.Window.get();
         this.oTray = null;
     },
 
     _attachEvent: function() {
         this.welBtnLogin.on("click", $.proxy(this._onClickLoginHandler, this));
+        this.welBtnClose.on("click", $.proxy(this._closeWindow, this));
         this.oWindow.on('minimize', $.proxy(this._onMinimizeWindow, this));
     },
 
@@ -52,7 +54,10 @@ LoginView.prototype = {
     },
 
     _closeWindow: function() {
-        this.oTray.remove();
         this.oWindow.close();
+
+        if(this.oTray) {
+            this.oTray.remove();
+        }
     }
 };

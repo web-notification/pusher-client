@@ -20,9 +20,9 @@
 
         <form action="javascript:void(0);" method="get">
 
-            <input type="text" id="user_id" value=""> <!-- JS because of IE support; better: placeholder="Email" -->
+            <input type="text" id="user_id" value="" placeholder="Input User Id"> <!-- JS because of IE support; better: placeholder="Email" -->
 
-            <input type="password" id="user_password" value=""> <!-- JS because of IE support; better: placeholder="Password" -->
+            <input type="password" id="user_password" value="" placeholder="Input User Password"> <!-- JS because of IE support; better: placeholder="Password" -->
 
             <input type="submit" value="Login" id="_btn_sign_in">
 
@@ -35,6 +35,9 @@
         </form>
 
     </fieldset>
+    <div class="wrap_close">
+        <a href="#" class="close" id="_btn_close" >X</a>
+    </div>
 
 </div> <!-- end login-form -->
 <script>
