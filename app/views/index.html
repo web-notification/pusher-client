@@ -9,27 +9,34 @@
 
     <script type="text/javascript" src="../js/LoginViewController.js"></script>
     <script type="text/javascript" src="../js/PusherClient.js"></script>
+    <link href="../css/main.css" media="all" rel="stylesheet" type="text/css" />
 </head>
-<body>
-<section id="msg-intro">
-    <section id="msg-login">
-        <div class="msg-login">
-            <div class="bx_login">
-                <!-- [D] label.msg-txt > input[type=text] 에 focus 시 .msg-ph 에 msg-blind 추가 -->
-                <label class="msg-txt t2">
-                    <span class="msg-ph">아이디</span>
-                    <input type="text" id="user_id" value="">
-                </label>
-                <br>
-                <label class="msg-txt t2">
-                    <span class="msg-ph">비밀번호</span>
-                    <input type="password" id="user_password" value="">
-                </label>
-                <button type="submit" class="msg-btn" id="_btn_sign_in">로그인</button>
-            </div>
-        </div>
-    </section>
-</section>
+<body style="-webkit-app-region: drag">
+<div id="login-form">
+
+    <h3>Pusher Login</h3>
+
+    <fieldset>
+
+        <form action="javascript:void(0);" method="get">
+
+            <input type="text" id="user_id" value=""> <!-- JS because of IE support; better: placeholder="Email" -->
+
+            <input type="password" id="user_password" value=""> <!-- JS because of IE support; better: placeholder="Password" -->
+
+            <input type="submit" value="Login" id="_btn_sign_in">
+
+            <footer class="clearfix">
+
+                <p><span class="info">?</span><a href="#">What is this?</a></p>
+
+            </footer>
+
+        </form>
+
+    </fieldset>
+
+</div> <!-- end login-form -->
 <script>
     new LoginView();
 </script>

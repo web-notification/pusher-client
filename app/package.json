@@ -1,17 +1,22 @@
 {
-  "name": "pusher-client",
-  "main": "views/index.html",
-  "version": "0.0.1",
-  "single-instance": true,
-  "window": {
-    "title": "pusher-client",
-    "toolbar": true,
-    "width": 300,
-    "height": 300,
-    "min_width": 300,
-    "min_height": 300,
-    "position": "center",
-    "resizable": false
-  },
-  "chromium-args": "--child-clean-exit"
+    "name": "pusher-client",
+    "main": "views/index.html",
+    "version": "0.0.1",
+    "single-instance": true,
+    "window": {
+        "title": "pusher-client",
+        "toolbar": false,
+        "width": 300,
+        "height": 251,
+        "min_width": 300,
+        "min_height": 251,
+        "max_width": 300,
+        "max_height": 251,
+        "position": "center",
+        "resizable": false,
+        "frame": false,
+        "fullscreen":false,
+        "kiosk":false
+    },
+    "chromium-args": "--child-clean-exit"
 }
