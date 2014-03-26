@@ -19,7 +19,8 @@ PusherClient.prototype = {
         this._connectSocket();
 
         this.callbacks = {
-            connected : function() {}
+            connected : function() {},
+            error: function() {}
         }
     },
 
@@ -28,6 +29,7 @@ PusherClient.prototype = {
         this.socket.on('receivePushMessage', $.proxy(this._onReceivePushMessage, this));
         this.socket.on('connect', $.proxy(this._onConnectedSocket, this));
         this.socket.on('disconnect', $.proxy(this._onDisconnectedSocket, this));
+        this.socket.on('error', $.proxy(this._onErrorSocket, this));
     },
 
     connect: function(userid, password, callbacks) {
@@ -59,8 +61,12 @@ PusherClient.prototype = {
         this._reconnectTimer = setInterval($.proxy(this._reconnectSocket, this), this.RETRY_INTERVAL);
     },
 
+    _onErrorSocket: function(data) {
+        this.callbacks.error.call(data)
+    },
+
     _onRegistSuccess: function (data) {
-        this.callbacks.connected.apply(this.callbacks.connected, data);
+        this.callbacks.connected.call(data);
     },
 
     _onReceivePushMessage: function (data) {

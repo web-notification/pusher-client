@@ -39,7 +39,8 @@ LoginView.prototype = {
         });
 
         pusher.connect(this.welUserId.val(), this.welUserPasswd.val(), {
-            connected: $.proxy(this._fnConnectedCallback, this)
+            connected: $.proxy(this._fnConnectedCallback, this),
+            error: $.proxy(this._fnSocketErrorCallback, this)
         });
     },
 
@@ -62,6 +63,10 @@ LoginView.prototype = {
 
     _fnConnectedCallback: function(data) {
         this.oWindow.minimize();
+    },
+
+    _fnSocketErrorCallback: function() {
+        alert('소켓 서버 연결에 실패하였습니다.');
     },
 
     _closeWindow: function() {
