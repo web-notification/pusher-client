@@ -32,7 +32,7 @@ PusherClient.prototype = {
 
     _onReceivePushMessage: function (data) {
         window.LOCAL_NW.desktopNotifications.notify(data.icon, data.subject, data.description, function(){
-            window.open(data.url);
+            gui.Shell.openExternal(data.url)
         });
     }
 };
