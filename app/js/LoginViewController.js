@@ -19,6 +19,18 @@ LoginView.prototype = {
         this.welBtnLogin.on("click", $.proxy(this._onClickLoginHandler, this));
         this.welBtnClose.on("click", $.proxy(this._closeWindow, this));
         this.oWindow.on('minimize', $.proxy(this._onMinimizeWindow, this));
+
+        this.oWindow.on("close", $.proxy(function() {
+            this.hide();
+            if(this.oWindow != null) {
+                this.oWindow.close(true);
+            }
+            this.close(true);
+        }, this));
+
+        this.oWindow.on('closed', function() {
+            this.oWindow = null;
+        });
     },
 
     _onClickLoginHandler: function() {
@@ -29,7 +41,6 @@ LoginView.prototype = {
         pusher.connect(this.welUserId.val(), this.welUserPasswd.val(), {
             connected: $.proxy(this._fnConnectedCallback, this)
         });
-
     },
 
     _onMinimizeWindow: function() {
@@ -54,10 +65,9 @@ LoginView.prototype = {
     },
 
     _closeWindow: function() {
-        this.oWindow.close();
-
         if(this.oTray) {
             this.oTray.remove();
         }
+        this.oWindow.close(true);
     }
 };
